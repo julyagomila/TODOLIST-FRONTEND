@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+.buttonX {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
