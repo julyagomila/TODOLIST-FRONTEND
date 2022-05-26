@@ -1,6 +1,6 @@
 //PACKAGES
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "../src/App.css";
+import "./App.css";
 
 //COMPOSANTS
 // import Header from "./components/Header";
