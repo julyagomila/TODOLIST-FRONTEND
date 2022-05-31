@@ -2,8 +2,185 @@
   text-align: center;
 }
 
-.buttonX {
-  width: 20px;
-  height: 20px;
-  background-color: red;
+/* HOMEPAGE ANIMATION */
+
+h1 {
+  animation: glow 10s ease-in-out infinite;
+  display: block;
+  width: 100%;
+  padding: 40px;
+  line-height: 1.5;
+  font: 900 8em "Concert One", sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  color: #0a0a0a;
+}
+
+figure {
+  animation: wobble 5s ease-in-out infinite;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate3d(1, 1, 0, 40deg);
+  }
+  25% {
+    transform: rotate3d(-1, 1, 0, 40deg);
+  }
+  50% {
+    transform: rotate3d(-1, -1, 0, 40deg);
+  }
+  75% {
+    transform: rotate3d(1, -1, 0, 40deg);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 30px red;
+  }
+  25% {
+    text-shadow: 0 0 30px orange;
+  }
+  50% {
+    text-shadow: 0 0 30px forestgreen;
+  }
+  75% {
+    text-shadow: 0 0 30px cyan;
+  }
+}
+
+h1:nth-child(2) {
+  transform: translateZ(5px);
+}
+h1:nth-child(3) {
+  transform: translateZ(10px);
+}
+h1:nth-child(4) {
+  transform: translateZ(15px);
+}
+h1:nth-child(5) {
+  transform: translateZ(20px);
+}
+h1:nth-child(6) {
+  transform: translateZ(25px);
+}
+h1:nth-child(7) {
+  transform: translateZ(30px);
+}
+h1:nth-child(8) {
+  transform: translateZ(35px);
+}
+h1:nth-child(9) {
+  transform: translateZ(40px);
+}
+h1:nth-child(10) {
+  transform: translateZ(45px);
+}
+
+/* HEADER */
+
+header {
+  background-color: gold;
+  border-bottom: dotted;
+  padding: 10px;
+}
+.titleHeader {
+  font-size: 20px;
+  font-family: "Press Start 2P", cursive;
+}
+
+/* TODOLIST PAGE */
+
+.container-todolist {
+  background-image: url(/src/assets/pictures/horloges2.jpeg);
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.section-todolist {
+  height: 60%;
+  width: 30%;
+  margin-left: 35%;
+  /* background-color: lightyellow; */
+  padding-top: 30px;
+}
+
+.typewriter {
+  font-size: 40px;
+}
+
+.formAddTask {
+  padding: 10px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* border: yellow solid 2px; */
+}
+
+.input {
+  border: lightgrey;
+  font-weight: 900;
+  font-size: 15px;
+  background-color: lightgrey;
+  height: 40px;
+  width: 230px;
+  color: black;
+  border-radius: 50%;
+}
+
+.taskTitle {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.buttonAddTask {
+  /*  styling */
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 5px;
+  color: #fafafa;
+  border: 3px solid #fafafa;
+  padding: 20px;
+
+  /*  centering */
+  /* position: absolute;
+  text-align: center; */
+  left: 40%;
+  top: 40%;
+  border-radius: 50%;
+  font-size: 15px;
+  background: silver;
+}
+.buttonAddTask:hover {
+  background: gold;
+  color: black;
+}
+
+.buttonDelete {
+  width: 60px;
+  height: 60px;
+  border: dotted white;
+  color: white;
+  background-color: black;
+  border-radius: 200%;
+  margin-right: 10px;
+}
+
+.buttonEdit {
+  width: 60px;
+  height: 60px;
+  border: dotted black;
+  color: black;
+  background-color: white;
+  border-radius: 200%;
 }
