@@ -22,7 +22,7 @@ function Todolist({ token }) {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/get/all/tasks`,
+          `https://tic-tac-tic--app.herokuapp.com/get/all/tasks`,
 
           {
             headers: {
@@ -47,7 +47,7 @@ function Todolist({ token }) {
 
     try {
       const response = await axios.post(
-        `http://localhost:3001/create/task`,
+        `https://tic-tac-tic--app.herokuapp.com/create/task`,
         newTask,
         {
           headers: {
@@ -64,9 +64,12 @@ function Todolist({ token }) {
 
   const handleDelete = async (id) => {
     try {
-      const response = await axios.post(`http://localhost:3001/delete/task`, {
-        id: id,
-      });
+      const response = await axios.post(
+        `https://tic-tac-tic--app.herokuapp.com/delete/task`,
+        {
+          id: id,
+        }
+      );
       setRefresh(refresh + 1);
     } catch (error) {
       console.log(error.response.data);
@@ -75,10 +78,13 @@ function Todolist({ token }) {
 
   const handleEdit = async (id) => {
     try {
-      const response = await axios.post(`http://localhost:3001/update`, {
-        id: id,
-        title: input,
-      });
+      const response = await axios.post(
+        `https://tic-tac-tic--app.herokuapp.com/update`,
+        {
+          id: id,
+          title: input,
+        }
+      );
       setRefresh(refresh + 1);
       setInput("");
     } catch (error) {
@@ -89,7 +95,7 @@ function Todolist({ token }) {
   const handleCheckbox = async (id) => {
     try {
       const response = await axios.post(
-        `http://localhost:3001/update/checkbox`,
+        `https://tic-tac-tic--app.herokuapp.com/update/checkbox`,
         {
           id: id,
         }

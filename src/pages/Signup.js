@@ -22,12 +22,15 @@ const Signup = ({ setUser }) => {
       //une requête au serveur pour créer un nouveau user
       // axios.post("url", body)
 
-      const response = await axios.post("http://localhost:3001/user/signup", {
-        email: email,
-        username: username,
-        password: password,
-        newsletter: newsletter,
-      });
+      const response = await axios.post(
+        "https://tic-tac-tic--app.herokuapp.com/user/signup",
+        {
+          email: email,
+          username: username,
+          password: password,
+          newsletter: newsletter,
+        }
+      );
       setUsername("");
       setEmail("");
       setPassword("");
