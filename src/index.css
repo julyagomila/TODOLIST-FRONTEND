@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@font-face {
+  font-family: "PicNic";
+  src: url("./assets/fonts/PicNic-Regular.eot");
+  src: url("/src/assets/fonts/PicNic-Regular.eot") format("embedded-opentype"),
+    url("./assets/fonts/PicNic-Regular.woff2") format("woff2"),
+    url("./assets/fonts/PicNic-Regular.woff") format("woff"),
+    url("./assets/fonts/PicNic-Regular.ttf") format("truetype"),
+    url("./assets/fonts/PicNic-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

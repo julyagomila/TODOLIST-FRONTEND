@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Typewriter from "typewriter-effect";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const backgroundPicture = new URL(
   "../assets/pictures/horloges2.jpeg",
@@ -10,20 +11,30 @@ const backgroundPicture = new URL(
 //COMPOSANTS
 import Header from "../components/Header";
 
-function Todolist() {
+function Todolist({ token }) {
   const [input, setInput] = useState("");
   const [tasks, setTasks] = useState([]);
   const [refresh, setRefresh] = useState(0);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/get/all/tasks`);
+        const response = await axios.get(
+          `http://localhost:3001/get/all/tasks`,
+
+          {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setTasks(response.data);
-        console.log(data);
+        // console.log(data);
         setIsLoading(false);
       } catch (error) {
-        console.log(error.response);
+        console.log(error.response.data);
       }
     };
     fetchData();
@@ -31,12 +42,21 @@ function Todolist() {
 
   const addNewTask = async (event) => {
     event.preventDefault();
+    const newTask = new FormData();
+    newTask.append("title", input);
+
     try {
-      const response = await axios.post(`http://localhost:3001/create/task`, {
-        title: input,
-      });
+      const response = await axios.post(
+        `http://localhost:3001/create/task`,
+        newTask,
+        {
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
+        }
+      );
     } catch (error) {
-      console.log(error.response);
+      console.log(error.response.data);
     }
     setInput("");
     setRefresh(refresh + 1);
@@ -49,7 +69,7 @@ function Todolist() {
       });
       setRefresh(refresh + 1);
     } catch (error) {
-      console.log(error.response);
+      console.log(error.response.data);
     }
   };
 
@@ -72,7 +92,6 @@ function Todolist() {
         `http://localhost:3001/update/checkbox`,
         {
           id: id,
-          isDone: true,
         }
       );
       setRefresh(refresh + 1);
@@ -82,9 +101,11 @@ function Todolist() {
     }
   };
 
-  return (
+  return token ? (
     <div className="App">
-      <Header />
+      <Link to={"/"}>
+        <Header />
+      </Link>
       <div className="container-todolist">
         <section className="section-todolist">
           <div className="typewriter">
@@ -154,8 +175,13 @@ function Todolist() {
             );
           })}
         </section>
+        <Link to={"/login"}>
+          <span className="logout">Logout</span>
+        </Link>
       </div>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 }
 

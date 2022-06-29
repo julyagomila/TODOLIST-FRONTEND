@@ -94,13 +94,180 @@ header {
   font-family: "Press Start 2P", cursive;
 }
 
+/* SIGNUP PAGE */
+
+.mainSignup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.formSignup {
+  text-align: center;
+}
+.titleSignup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  height: 150px;
+  width: 100vw;
+  background-color: grey;
+  color: white;
+  animation: glow 10s ease-in-out infinite;
+  height: 150px;
+  width: 400px;
+  border-radius: 100%;
+}
+
+.figureSignup {
+  animation: wobble 5s ease-in-out infinite;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+}
+
+.inputSignup,
+.buttonSignup {
+  height: 70px;
+  width: 280px;
+  margin-bottom: 10px;
+  color: grey;
+  border-radius: 70%;
+  text-align: center;
+
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  font-style: bold;
+  border-radius: 16px * 20;
+  padding: 16px;
+  background-color: lightgray;
+  text-shadow: 2px 1px 0 white;
+
+  margin-right: 16px/2;
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px white;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.inputSignup:focus {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px white;
+}
+
+.inputCheckSignup {
+  border-radius: 40%;
+  height: 20px;
+  width: 20px;
+  margin-bottom: 20px;
+}
+
+/* LOGIN PAGE */
+
+.mainLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.formLogin {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.titleLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  height: 150px;
+  width: 100vw;
+  background-color: grey;
+  color: white;
+  animation: glow 10s ease-in-out infinite;
+  height: 150px;
+  width: 400px;
+  border-radius: 100%;
+}
+
+.figureLogin {
+  animation: wobble 5s ease-in-out infinite;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+}
+
+.inputLogin,
+.buttonLogin {
+  height: 70px;
+  width: 280px;
+  margin-bottom: 30px;
+  color: grey;
+  border-radius: 70%;
+  text-align: center;
+
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  font-style: bold;
+  border-radius: 16px * 20;
+  padding: 16px;
+  background-color: lightgray;
+  text-shadow: 2px 1px 0 white;
+
+  margin-right: 16px/2;
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px white;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.inputLogin:focus {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px white;
+}
+
+.inputCheckLogin {
+  border-radius: 40%;
+  height: 20px;
+  width: 20px;
+  margin-bottom: 20px;
+}
+
+.spanNews {
+  font-size: 20px;
+  color: dimgray;
+  font-style: italic;
+  font-weight: 500;
+  text-shadow: 2px 1px 0 yellow;
+}
+
+.spanSL {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  color: grey;
+  text-shadow: #babecc;
+}
+
 /* TODOLIST PAGE */
 
 .container-todolist {
   background-image: url(/src/assets/pictures/horloges2.jpeg);
   background-size: cover;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background-repeat: no-repeat;
 }
 
@@ -114,6 +281,7 @@ header {
 
 .typewriter {
   font-size: 40px;
+  /* font-family: "PicNic"; */
 }
 
 .formAddTask {
@@ -131,10 +299,11 @@ header {
   font-weight: 900;
   font-size: 15px;
   background-color: lightgrey;
-  height: 40px;
-  width: 230px;
+  height: 30px;
+  width: 200px;
   color: black;
   border-radius: 50%;
+  padding: 20px;
 }
 
 .taskTitle {
@@ -183,4 +352,12 @@ header {
   color: black;
   background-color: white;
   border-radius: 200%;
+}
+
+.logout {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  color: grey;
+  text-shadow: #babecc;
 }
